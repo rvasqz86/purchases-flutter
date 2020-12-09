@@ -398,6 +398,15 @@ class Purchases {
     await _channel.invokeMethod('setAttributes', {'attributes': attributes});
   }
 
+  /// iOS only. Purchase a product applying a given discount.
+  /// Redeeming an Offer Code
+  ///
+  /// To allow your users to redeem Offer Codes, you'll need to present the Offer Code redemption sheet.
+  /// In Purchases SDK 3.8.0, you can call the presentCodeRedemptionSheet method.
+  static Future<void> presentCodeRedemptionSheet() async {
+    await _channel.invokeMethod('presentCodeRedemptionSheet');
+  }
+
   /// Subscriber attribute associated with the email address for the user
   ///
   /// [email] Empty String or null will delete the subscriber attribute.
